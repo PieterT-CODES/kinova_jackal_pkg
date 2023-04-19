@@ -1,7 +1,4 @@
          
-int64 vagon_type
-int64 index
-bool isLast
 int64 side 
 ---
 #result

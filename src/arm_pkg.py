@@ -22,7 +22,7 @@ class Kinova_Final():
         self.arduino_control = ArduinoControl()
         self.start_kinova_service = rospy.Service('start_kinova_service', Empty, self.cb_start)
         self.stop_kinova_service = rospy.Service('stop_kinova_service', Empty, self.cb_stop)
-        self.kinova_service_no_cycle = rospy.Service('sequence_kinova_service', Empty, self.cb_sequence)
+        self.kinova_service_no_cycle = rospy.Service('sequence_kinova_service', sequence, self.cb_sequence)
         self.run = None
 
     def cb_start(self, req):
@@ -33,9 +33,9 @@ class Kinova_Final():
         self.run = Side.CYCLE_STOP.value
         return []
     
-    def cb_sequence(self,side): 
-        self.run = Side.RIGHT.value
-        return []
+    def cb_sequence(self, req): 
+        self.run = req.side
+        return sequenceResponse()
     
     def doSomeWork(self): 
         if self.run == Side.CYCLE_START.value: 
