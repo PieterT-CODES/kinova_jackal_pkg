@@ -1,0 +1,11 @@
+#goal         
+int64 vagon_type
+int64 index
+bool isLast
+int64 side 
+---
+#result
+string status
+---
+#feedback
+float64 joint_info
