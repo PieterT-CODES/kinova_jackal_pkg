@@ -57,7 +57,7 @@ class KinovaControl():
 		self.move_group.stop()
 
 	def home_pose(self): 
-		joint_goal = self.set_arm_position(0.030855917021876067, -0.6764423842479088, -2.5571678113263023, -1.675087312979053, -2.081171442316516, 1.5458318547364935)
+		joint_goal = self.set_arm_position(0.031143272103495618, -2.1303216781305823, -2.6214698358462654, -1.6230741789931518, -0.7582536276707064, 1.5455836481228984)
 		return joint_goal
 
 	def cykle_pose_third_joint(self): 
@@ -80,11 +80,11 @@ class KinovaControl():
 
 	def cykle_movement(self): 
 		joint_goals = []
-		joint_goal_left = self.set_arm_position(0.00606854517596356, 0.006065882014873481, -0.04563912423290528, -2.5255973681839583, -1.5704698232452525, -1.6174485175064683)
-		joint_goal_right = self.set_arm_position(0.00606854517596356, 0.006061354641020346, -0.04627189130790921, 2.5225792077205713, -1.5721119283733955, -1.6174410606554162)
-		
-		joint_goals.append(joint_goal_left)
-		joint_goals.append(joint_goal_right)
+		joint_goal_1 = self.set_arm_position(0.030315561636698993, -0.6772898021067713, -0.9067690669167199, -1.5526671239902914, -0.09137944858723479, 2.533427860737118)
+		joint_goal_2 = self.set_arm_position(0.030315561636698993, -0.6772898021067713, -0.9067690669167199, -1.5526671239902914, -0.09137944858723479, -2.599267061838275)
+	
+		joint_goals.append(joint_goal_1)
+		joint_goals.append(joint_goal_2)
 		return joint_goals
 		
 	def get_sequence_right(self):

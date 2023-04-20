@@ -74,7 +74,8 @@ class Kinova_Final():
     
 def main(): 
     kinova = Kinova_Final()
-    kinova.grab_gun() 
+    #kinova.grab_gun() 
+    kinova.kinova_control.home_pose()
     rospy.init_node('service_server_kinova_package')
     r = rospy.Rate(15.0)
     
